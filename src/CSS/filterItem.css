@@ -51,7 +51,7 @@
 
   @media(min-width: 992px) {
     .active {
-      color: red;
+      font-weight: 700;
     }
   }
 
