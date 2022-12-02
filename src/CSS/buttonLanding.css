@@ -12,15 +12,6 @@
   transition: all .2s ease-in-out;
 }
 
-.heroBtn:hover {
-  background: #000;
-  transform: scale(.95);
-}
-
-.heroBtn:hover>span {
-  color: #fff;
-}
-
 @media (max-width: 577px) {
   .heroBtn {
     padding: .375rem .8125rem;

@@ -18,7 +18,7 @@
 .title {
   font-size: .95rem;
   position: absolute;
-  top: -1.5rem;
+  top: -3rem;
 }
 
 .facebook,
@@ -69,8 +69,7 @@
   }
 
   .title {
-    right: .8rem;
-    top: -2.5rem;
+    right: .8rem
   }
 }
 
