@@ -1,0 +1,57 @@
+  .subMenu {
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, .125);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    margin: 0 auto;
+    transition: all 20s ease-in-out;
+  }
+
+  .title {
+    color: #000;
+    font-size: .9rem;
+    text-transform: capitalize;
+    padding: 1rem 0;
+  }
+
+  .filterPlus {
+    color: #343a40;
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+
+  .subMenuItem {
+    padding: .3rem 0;
+  }
+
+  .subMenuLabel {
+    display: flex;
+  }
+
+  .flex {
+    margin: .4rem .2rem;
+    position: relative;
+  }
+
+  .active >span {
+    font-weight: 700;
+  }
+
+  .subMenuText {
+    color: #000;
+    font-size: .75rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: absolute;
+    top: -.1rem;
+    left: 1.4rem;
+  }
+
+  @media(min-width: 992px) {
+    .active {
+      color: red;
+    }
+  }
+

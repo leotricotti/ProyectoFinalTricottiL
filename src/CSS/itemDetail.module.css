@@ -1,0 +1,87 @@
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailImg {
+  width: 100%;
+  padding: 3 rem 0.7rem 1rem 0.7rem;
+}
+
+.detailTitle {
+  font-size: 1.25rem;
+  padding: 0.7rem 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.detailDescription {
+  font-size: 0.9rem;
+  padding: 0rem 0.7rem 1rem 0.7rem;
+}
+
+.detailPrice {
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 1rem 0;
+}
+
+.text {
+  width: 50%;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 0.7rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  cursor: pointer;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textColor {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.continue {
+  color: #000;
+  font-size: .7rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .detailContainer {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .detail {
+    padding-top: 6rem;
+  }
+
+  .detailImg {
+    width: 70%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .detailPrice {
+    border: none;
+    padding-left: 0.7rem;
+    text-align: left;
+  }
+
+  .detailTitle {
+    padding-right: 2rem;
+    border: none;
+  }
+
+  .detailDescription {
+    padding-right: 2rem;
+  }
+}

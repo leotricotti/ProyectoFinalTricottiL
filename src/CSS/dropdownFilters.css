@@ -1,0 +1,37 @@
+.bannerImg {
+  padding: 3rem .5rem 0 .5rem;
+}
+
+.filterBtn {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .5rem .5rem 1rem;
+  margin: .3rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+
+.filterBtn>span {
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.plusSign {
+  color: #343a40;
+  font-size: .9rem;
+  padding-right: 1rem;
+  cursor: pointer;
+}
+
+@media (min-width: 750px) {
+  .filterBtn {
+    width: 30%;
+  }
+}
+
+@media (min-width: 992px) {
+  .filterBtn {
+    width: 100%;
+  }
+}

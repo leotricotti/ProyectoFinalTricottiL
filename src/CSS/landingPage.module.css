@@ -1,0 +1,32 @@
+.flex {
+  height: 40%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  top: 3rem;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.heroContainer {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  padding: 0 .7rem;
+  z-index: -1;
+}
+
+.heroMovil {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .heroMovil {
+    display: block;
+  }
+
+  .heroDesktop {
+    display: none;
+  }
+}

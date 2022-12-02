@@ -1,0 +1,48 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 .7rem;
+}
+
+.title {
+  color: #000;
+  font-size: 1.625rem;
+  padding: 0 0 1.3rem 1rem;
+}
+
+.tendenciesContainer {
+  position: relative;
+  cursor: pointer;
+}
+
+.tendenciesContainer>img {
+  padding: .35rem 0;
+}
+
+.tendenciesContainer>span {
+  color: #000;
+  font-size: 1.625rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+@media (min-width: 750px) {
+  .gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+    gap: .7rem;
+  }
+
+  .tendenciesContainer>span {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    bottom: .5rem;
+    left: .5rem;
+  }
+
+  .tendenciesContainer>img {
+    padding: 0;
+  }
+}

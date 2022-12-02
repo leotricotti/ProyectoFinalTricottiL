@@ -1,0 +1,85 @@
+.gridContainer {
+  width: 100%;
+  margin: 3rem 0 1rem 0;
+  display: grid;
+  height: 12rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialNetwork {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.title {
+  font-size: .95rem;
+  position: absolute;
+  top: -1.5rem;
+}
+
+.facebook,
+.instagram {
+  width: 2.8rem;
+  height: 2.7rem;
+  border: 1px solid rgba(0, 0, 0, .125);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.facebook>img,
+.instagram>img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.btn {
+  width: 12rem;
+  height: 3rem;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn>a {
+  font-size: .9rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+@media(min-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+  .socialNetwork {
+    justify-content: flex-end;
+    text-align: center;
+    margin-right: 8rem;
+  }
+
+  .btn {
+    margin-left: 6rem;
+  }
+
+  .title {
+    right: .8rem;
+    top: -2.5rem;
+  }
+}
+
+@media(min-width: 992px) {
+  .btn {
+    margin-left: 8rem;
+  }
+
+  .socialNetwork {
+    margin-right: 10rem;
+  }
+}

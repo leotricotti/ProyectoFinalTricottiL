@@ -1,0 +1,78 @@
+.cartBodyContainer {
+  position: relative;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.cartImg {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: .5rem;
+}
+
+.itemTitle {
+  position: absolute;
+  top: .5rem;
+  left: 4rem;
+  font-size: .875rem;
+  padding-bottom: .5rem;
+  margin-right: .5rem;
+}
+
+.itemPrice {
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  font-size: .875rem;
+  padding-bottom: .5rem;
+}
+
+.btnContainer {
+  position: absolute;
+  top: 3.6rem;
+  left: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.btnPlus,
+.btnMinus {
+  font-size: .659rem;
+  padding: .15rem .3rem .15rem .3rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  color: rgba(0, 0, 0, .95);
+  text-align: center;
+}
+
+.quantity {
+  color: #000;
+  font-size: .875rem;
+  padding: 0 .8rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.subtotal {
+  position: absolute;
+  top: .5rem;
+  right: 1.5rem;
+  font-size: .875rem;
+}
+
+.trashCan {
+  width: 2rem;
+  height: 2rem;
+  color: rgba(0, 0, 0, .7);
+  font-size: .8rem;
+  position: absolute;
+  top: .5rem;
+  right: -1rem;
+  cursor: pointer;
+}
+
+@media(min-width: 992px) {
+  .quantity {
+    font-size: .8rem;
+  }
+}

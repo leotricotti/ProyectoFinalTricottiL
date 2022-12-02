@@ -1,0 +1,69 @@
+/* 
+================
+Font
+================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;600;700&display=swap');
+
+
+/* 
+================
+Variables
+================
+*/
+
+:root {
+  --clr-white: #fff;
+  --clr-black: #000;
+  --ff-main: 'Figtree', sans-serif;
+  --fs-body: 1rem;
+  --line-height: 1.5;
+}
+
+/*
+================
+Resets
+================
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/*
+=================
+Global Settings
+=================
+*/
+
+body {
+  color: var(--clr-black);
+  font-family: var(--ff-main);
+  font-size: var(--fs-body);
+  font-weight: 300;
+  background-color: var(--clr-white);
+}
+
+@media (min-width: 1200px) {
+  body, header {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
