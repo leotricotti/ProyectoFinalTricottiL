@@ -1,0 +1,97 @@
+.login {
+  width: inherit;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 .7rem;
+  padding-top: 3rem;
+}
+
+.facebookLogin {
+  color: #fff;
+  background: #3B5998;
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  margin: 2rem 0 1.5rem 0;
+  cursor: pointer;
+}
+
+.bottom-line {
+  font-size: .8rem;
+  position: relative;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+}
+
+.bottom-line::before {
+  content: "";
+  position: absolute;
+  border-top: 0.1px solid rgba(0, 0, 0, .125);
+  width: 48.5%;
+  top: .45rem;
+  left: 0;
+}
+
+.bottom-line::after {
+  content: "";
+  position: absolute;
+  border-top: 0.1px solid rgba(0, 0, 0, .125);
+  width: 48.5%;
+  top: .45rem;
+  right: 0;
+}
+
+.userData {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.email-container, .pass-container {
+  width: 100%;
+}
+
+.email-title, .pass-title { 
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+
+.email, .pass {
+  width: 100%;
+  padding: .8rem;
+  border: 1px solid rgba(0, 0, 0, .125);
+  text-align: left;
+  margin-top: .6rem;
+  margin-bottom: 2rem;
+}
+
+.btn-login {
+  border: 1px solid rgba(0, 0, 0, .125);
+  padding: .8rem 1rem;
+  cursor: pointer;
+}
+
+.info-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info-img {
+  width: 4rem;
+  height: 3.4rem;
+}
+
+@media(min-width: 768px) {
+
+}

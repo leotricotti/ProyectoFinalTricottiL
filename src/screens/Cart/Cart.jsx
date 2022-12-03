@@ -13,22 +13,22 @@ export const Cart = () => {
   const { createOrder } = firebaseServices;
   const total = totalCart();
 
-  // const saveCart = () => {
-  //   const usersCart = {
-  //     user: {
-  //       name: "Daniel Soto",
-  //       email: "sotopro@gmail.com",
-  //     },
-  //     items: cartArray,
-  //     total: { total },
-  //   };
-  //   const db = getFirestore();
+  const saveCart = () => {
+    const usersCart = {
+      user: {
+        name: "aniel Soto",
+        email: "sotopro@gmail.com",
+      },
+      items: cartArray,
+      total: { total },
+    };
+    const db = getFirestore();
 
-  //   const cartCollection = collection(db, "carts");
-  //   addDoc(cartCollection, usersCart).then((docRef) => {
-  //     setCartId(docRef.id);
-  //   });
-  // };
+    const cartCollection = collection(db, "carts");
+    addDoc(cartCollection, usersCart).then((docRef) => {
+      setCartId(docRef.id);
+    });
+  };
 
   return (
     <>

@@ -8,6 +8,7 @@ import { Cart } from "./screens/Cart/Cart";
 import { Footer } from "./components/Footer/Footer";
 import { NavFooter } from "./components/NavFooter/NavFooter";
 import { CartProvider } from "./components/Context/CartContext.jsx";
+import { Login } from "./screens/Login/Login";
 
 export const App = () => {
   return (
@@ -18,14 +19,15 @@ export const App = () => {
           <Routes>
             <Route exact path="/" element={<HomePage />} />
             <Route exact path="/products" element={<ItemListContainer />} />
+            <Route exact path="/:categoryId" element={<ItemListContainer />} />
             <Route
               exact
-              path="/:categoryId"
-              element={<ItemListContainer />}
+              path="/products/:detailId"
+              element={<ItemDetailContainer />}
             />
-            <Route exact path="/products/:detailId" element={<ItemDetailContainer />} />
             <Route exact path="/stores" element={<StoreAddressPage />} />
             <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/login" element={<Login />} />
           </Routes>
         </main>
         <Footer />
