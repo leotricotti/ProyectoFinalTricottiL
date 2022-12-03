@@ -14,22 +14,22 @@ export const Cart = () => {
   const { createOrder } = firebaseServices;
   const total = totalCart();
 
-  const saveCart = () => {
-    const usersCart = {
-      user: {
-        name: "Daniel Soto",
-        email: "sotopro@gmail.com",
-      },
-      items: cartArray,
-      total: { total },
-    };
-    const db = getFirestore();
+  // const saveCart = () => {
+  //   const usersCart = {
+  //     user: {
+  //       name: "Daniel Soto",
+  //       email: "sotopro@gmail.com",
+  //     },
+  //     items: cartArray,
+  //     total: { total },
+  //   };
+  //   const db = getFirestore();
 
-    const cartCollection = collection(db, "carts");
-    addDoc(cartCollection, usersCart).then((docRef) => {
-      setCartId(docRef.id);
-    });
-  };
+  //   const cartCollection = collection(db, "carts");
+  //   addDoc(cartCollection, usersCart).then((docRef) => {
+  //     setCartId(docRef.id);
+  //   });
+  // };
 
   return (
     <>
@@ -52,7 +52,7 @@ export const Cart = () => {
           <div className={styles.cartContainer}>
             <div className={styles.titleContainer}>
               <h3 className={styles.cartTitle}>Carrito de compras</h3>
-              <div className={styles.cartClose}>
+              <div className={styles.cartClose} onClick={() => handleClick}>
                 <CloseSign />
               </div>
             </div>
@@ -79,14 +79,6 @@ export const Cart = () => {
                 <span className={styles.import}>${totalCart()},99</span>
               </div>
             </div>
-            <div className={styles.flex}>
-              <NavLink to="/products">
-                <span className={styles.continue}>Seguir comprando</span>
-              </NavLink>
-              <span onClick={saveCart} className={styles.saveCart}>
-                Guardar compra
-              </span>
-            </div>
             <div className={styles.cartOption}>
               <button
                 className={styles.closeBuy}
@@ -94,6 +86,11 @@ export const Cart = () => {
               >
                 Finalizar compra
               </button>
+            </div>
+            <div className={styles.continue}>
+              <NavLink to="/products">
+                <span className={styles.continue}>Seguir comprando</span>
+              </NavLink>
             </div>
           </div>
         </div>
