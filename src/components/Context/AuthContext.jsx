@@ -17,12 +17,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const login = async (email, password) => {
-    const userCredentials = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+  const login = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const logout = () => signOut(auth);
