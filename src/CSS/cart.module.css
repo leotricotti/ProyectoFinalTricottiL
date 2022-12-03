@@ -72,11 +72,6 @@
   margin-right: 1rem;
 }
 
-.cartClose {
-  color: rgba(0, 0, 0, .7);
-  font-size: 1.2rem;
-}
-
 .subTitle {
   font-size: .875rem;
   display: flex;
@@ -113,7 +108,8 @@
   gap: 1.5rem;
 }
 
-.continue, .saveCart {
+.continue,
+.saveCart {
   color: #000;
   font-size: .7rem;
   text-transform: uppercase;

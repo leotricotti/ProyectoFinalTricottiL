@@ -1,6 +1,0 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRectangleXmark } from "@fortawesome/free-regular-svg-icons";
-
-export const CloseSign = ({ action }) => {
-  return <FontAwesomeIcon onClick={action} icon={faRectangleXmark} />;
-};

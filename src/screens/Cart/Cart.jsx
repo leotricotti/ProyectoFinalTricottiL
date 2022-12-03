@@ -1,7 +1,6 @@
 import logo from "../../assets/images/logo/converse.webp";
 import { useContext, useState } from "react";
 import { CartContext } from "../../components/Context/CartContext";
-import { CloseSign } from "../../components/Widgets/CloseSign";
 import { CartItem } from "../../components/CartItem/CartItem";
 import { NavLink } from "react-router-dom";
 import { firebaseServices } from "../../services/firebase";
@@ -9,12 +8,6 @@ import styles from "../../CSS/cart.module.css";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 export const Cart = () => {
-  const [toggle, setToggle] = useState(true);
-  const close = () => {
-    if (toggle) {
-      setToggle(!toggle);
-    }
-  };
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
   const [cartId, setCartId] = useState(null);
   const { createOrder } = firebaseServices;
@@ -49,7 +42,6 @@ export const Cart = () => {
           </div>
         </div>
       )}
-      {toggle && (
       <div>
         {cartArray.length > 0 && (
           <div>
@@ -60,9 +52,6 @@ export const Cart = () => {
             <div className={styles.cartContainer}>
               <div className={styles.titleContainer}>
                 <h3 className={styles.cartTitle}>Carrito de compras</h3>
-                <div className={styles.cartClose}>
-                  <CloseSign action={() => setToggle(!toggle)} />
-                </div>
               </div>
               <div className={styles.subTitle}>
                 <p>Producto</p>
@@ -102,9 +91,8 @@ export const Cart = () => {
               </div>
             </div>
           </div>
-          )}
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 };
