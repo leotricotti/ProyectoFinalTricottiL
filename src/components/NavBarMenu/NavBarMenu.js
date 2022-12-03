@@ -9,7 +9,11 @@ export function NavBarMenu({ close }) {
         {navBarMenuItems.map((item) => {
           return (
             <li key={item.title} className={styles.navList}>
-              <NavLink onClick={close} to={item.category} className={styles.navLink}>
+              <NavLink
+                onClick={close}
+                to={item.category}
+                className={styles.navLink}
+              >
                 {item.title}
               </NavLink>
             </li>

@@ -9,8 +9,8 @@ export function Login() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const email = "sotopro@gmail.com";
-  const password = "sotopro";
+  const email = "tricottiLeo@gmail.com";
+  const password = "tricottiLeo";
 
   const login = async () => {
     try {
