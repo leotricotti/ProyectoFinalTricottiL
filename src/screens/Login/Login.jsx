@@ -6,30 +6,25 @@ import "../../CSS/login.css";
 
 export function Login() {
   const [user, getUser] = useState({
-    email: "",
-    password: "",
-  });
-
-  const converseUser = {
     email: "tricottileo@gmail.com",
     password: "tricottileo",
-  }
-
-  getUser(converseUser);
-
-  console.log(user);
+  });
 
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
     try {
       await login(user.email, user.password);
-      navigate("/");
+      navigate("/cart");
     } catch (error) {
       setError(error.message);
+      console.log(error);
     }
+    
   };
 
   return (
@@ -49,7 +44,7 @@ export function Login() {
           <p className="pass">********</p>
         </div>
       </div>
-      <div className="btn-login" onClick={() => handleSubmit}>
+      <div className="btn-login" onClick={handleSubmit}>
         <h3> Iniciar sesión </h3>
       </div>
       <div className="info-container">
