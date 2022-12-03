@@ -58,21 +58,6 @@
   margin-top: .4rem;
 }
 
-.formContainer {
-  width: 16rem;
-  height: 4rem;
-  background: #000;
-  vertical-align: middle;
-}
-
-.inputContainer {
-  color: #fff;
-  height: 4rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .cart {
   cursor: pointer;
   color: #000;
@@ -162,17 +147,4 @@
     font-size: .85rem;
   }
 
-  .formContainer {
-    width: 1.1rem;
-    height: 4rem;
-    background: none;
-  }
-
-  .searchInput {
-    display: none;
-  }
-
-  .inputContainer {
-    color: #000;
-  }
 }
