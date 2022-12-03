@@ -52,10 +52,6 @@
   text-transform: capitalize;
 }
 
-.userLogin {
-  padding-top: .8rem;
-}
-
 .headerLogo {
   width: 100px;
   height: 12.2px;
@@ -83,6 +79,10 @@
 }
 
 .cart>p {
+  display: none;
+}
+
+.navLogin {
   display: none;
 }
 
@@ -126,13 +126,19 @@
     margin-top: 0;
   }
 
+  .navList:last-child {
+    display: none;
+  }
+
   .navLink {
     font-size: .85rem;
     padding: 0 .5rem;
+    font-weight: 400;
   }
 
-  .userLogin {
-    display: none;
+  .headerLeft {
+    display: flex;
+    align-items: center;
   }
 
   .cart {
@@ -140,10 +146,20 @@
     gap: .5rem;
     cursor: pointer;
     padding-right: 1rem;
+    margin-bottom: .2rem;
   }
 
-  .cart>p {
+  .navLogin {
     display: block;
+    padding-bottom: .2rem;
+    padding-right: .2rem;
+    margin-bottom: .2rem;
+  }
+
+  .cart>p, .navLogin>p{
+    display: block;
+    color: #000;
+    font-size: .85rem;
   }
 
   .formContainer {
