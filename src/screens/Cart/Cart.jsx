@@ -9,6 +9,12 @@ import styles from "../../CSS/cart.module.css";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 export const Cart = () => {
+  const [toggle, setToggle] = useState(true);
+  const close = () => {
+    if (toggle) {
+      setToggle(!toggle);
+    }
+  };
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
   const [cartId, setCartId] = useState(null);
   const { createOrder } = firebaseServices;
@@ -43,56 +49,60 @@ export const Cart = () => {
           </div>
         </div>
       )}
-      {cartArray.length > 0 && (
-        <div>
-          <div className={styles.logoContainer}>
-            <img className={styles.logo} src={logo} alt="Logo" />
-          </div>
-          <div className={styles.cartOverlay}></div>
-          <div className={styles.cartContainer}>
-            <div className={styles.titleContainer}>
-              <h3 className={styles.cartTitle}>Carrito de compras</h3>
-              <div className={styles.cartClose} onClick={() => handleClick}>
-                <CloseSign />
+      {toggle && (
+      <div>
+        {cartArray.length > 0 && (
+          <div>
+            <div className={styles.logoContainer}>
+              <img className={styles.logo} src={logo} alt="Logo" />
+            </div>
+            <div className={styles.cartOverlay}></div>
+            <div className={styles.cartContainer}>
+              <div className={styles.titleContainer}>
+                <h3 className={styles.cartTitle}>Carrito de compras</h3>
+                <div className={styles.cartClose}>
+                  <CloseSign action={() => setToggle(!toggle)} />
+                </div>
+              </div>
+              <div className={styles.subTitle}>
+                <p>Producto</p>
+                <p>Subtotal</p>
+              </div>
+              <div>
+                {cartArray.map((prod) => (
+                  <CartItem
+                    key={prod.id}
+                    id={prod.id}
+                    img={prod.img}
+                    title={prod.title}
+                    count={prod.quantity}
+                    price={prod.price}
+                    deleteItem={deleteItem}
+                  />
+                ))}
+              </div>
+              <div className={styles.cartBottom}>
+                <div className={styles.cartTotal}>
+                  <h3 className={styles.total}>Total:</h3>
+                  <span className={styles.import}>${totalCart()},99</span>
+                </div>
+              </div>
+              <div className={styles.cartOption}>
+                <button
+                  className={styles.closeBuy}
+                  // onClick={() => handleCheckout}
+                >
+                  Finalizar compra
+                </button>
+              </div>
+              <div className={styles.continue}>
+                <NavLink to="/products">
+                  <span className={styles.continue}>Seguir comprando</span>
+                </NavLink>
               </div>
             </div>
-            <div className={styles.subTitle}>
-              <p>Producto</p>
-              <p>Subtotal</p>
-            </div>
-            <div>
-              {cartArray.map((prod) => (
-                <CartItem
-                  key={prod.id}
-                  id={prod.id}
-                  img={prod.img}
-                  title={prod.title}
-                  count={prod.quantity}
-                  price={prod.price}
-                  deleteItem={deleteItem}
-                />
-              ))}
-            </div>
-            <div className={styles.cartBottom}>
-              <div className={styles.cartTotal}>
-                <h3 className={styles.total}>Total:</h3>
-                <span className={styles.import}>${totalCart()},99</span>
-              </div>
-            </div>
-            <div className={styles.cartOption}>
-              <button
-                className={styles.closeBuy}
-                // onClick={() => handleCheckout}
-              >
-                Finalizar compra
-              </button>
-            </div>
-            <div className={styles.continue}>
-              <NavLink to="/products">
-                <span className={styles.continue}>Seguir comprando</span>
-              </NavLink>
-            </div>
           </div>
+          )}
         </div>
       )}
     </>
