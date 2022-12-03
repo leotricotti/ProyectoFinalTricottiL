@@ -1,30 +1,35 @@
 import { useState } from "react";
-import sendImg from '../../assets/images/sends/sends.jpg'
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import sendImg from "../../assets/images/sends/sends.jpg";
+import { useAuth } from "../../components/Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import "../../CSS/login.css";
 
 export function Login() {
-  const auth = getAuth();
+  const [user, getUser] = useState({
+    email: "",
+    password: "",
+  });
 
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const converseUser = {
+    email: "tricottileo@gmail.com",
+    password: "tricottileo",
+  }
 
-  const email = "tricottiLeo@gmail.com";
-  const password = "tricottiLeo";
+  getUser(converseUser);
 
-  const login = async () => {
+  console.log(user);
+
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const [error, setError] = useState();
+
+  const handleSubmit = async () => {
     try {
-      const user = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      console.log(user);
+      await login(user.email, user.password);
+      navigate("/");
     } catch (error) {
-      console.log(error.message);
+      setError(error.message);
     }
-    setLoginEmail(email);
-    setLoginPassword(password);
   };
 
   return (
@@ -44,11 +49,11 @@ export function Login() {
           <p className="pass">********</p>
         </div>
       </div>
-      <div className="btn-login" onClick={() => login}>
+      <div className="btn-login" onClick={() => handleSubmit}>
         <h3> Iniciar sesión </h3>
       </div>
       <div className="info-container">
-        <img src={sendImg} alt="Envios gratis" className="info-img"/>
+        <img src={sendImg} alt="Envios gratis" className="info-img" />
         <h4 className="info-title">Envios Gratis</h4>
         <p className="info-text">A todo el país a partir de los $1.800,00</p>
       </div>

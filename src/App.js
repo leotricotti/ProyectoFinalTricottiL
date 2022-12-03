@@ -9,30 +9,37 @@ import { Footer } from "./components/Footer/Footer";
 import { NavFooter } from "./components/NavFooter/NavFooter";
 import { CartProvider } from "./components/Context/CartContext.jsx";
 import { Login } from "./screens/Login/Login";
+import { AuthProvider } from "./components/Context/AuthContext";
 
 export const App = () => {
   return (
     <BrowserRouter>
-      <CartProvider>
-        <NavBar />
-        <main>
-          <Routes>
-            <Route exact path="/" element={<HomePage />} />
-            <Route exact path="/products" element={<ItemListContainer />} />
-            <Route exact path="/:categoryId" element={<ItemListContainer />} />
-            <Route
-              exact
-              path="/products/:detailId"
-              element={<ItemDetailContainer />}
-            />
-            <Route exact path="/stores" element={<StoreAddressPage />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/cart" element={<Cart />} />
-          </Routes>
-        </main>
-        <Footer />
-        <NavFooter />
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <NavBar />
+          <main>
+            <Routes>
+              <Route exact path="/" element={<HomePage />} />
+              <Route exact path="/products" element={<ItemListContainer />} />
+              <Route
+                exact
+                path="/:categoryId"
+                element={<ItemListContainer />}
+              />
+              <Route
+                exact
+                path="/products/:detailId"
+                element={<ItemDetailContainer />}
+              />
+              <Route exact path="/stores" element={<StoreAddressPage />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/cart" element={<Cart />} />
+            </Routes>
+          </main>
+          <Footer />
+          <NavFooter />
+        </CartProvider>
+      </AuthProvider>
     </BrowserRouter>
   );
 };

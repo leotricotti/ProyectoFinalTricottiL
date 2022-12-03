@@ -100,14 +100,14 @@
     height: 100%;
     margin: auto;
     border: 1px solid rgba(0, 0, 0, .125);
-    padding: 1rem 3rem;
+    padding: 1rem 3rem 4rem 3rem;
 
   }
 }
 
 @media(min-width: 992px) {
   .login-container {
-    width: 30rem;
+    width: 35rem;
     margin: auto;
   }
 }
