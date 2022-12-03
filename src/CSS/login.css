@@ -95,6 +95,7 @@
 @media(min-width: 768px) {
   .login-container {
     width: 25rem;
+    height: 100%;
     margin: auto;
   }
 }

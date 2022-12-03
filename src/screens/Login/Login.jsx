@@ -37,7 +37,7 @@ export function Login() {
       <div className="userData">
         <div className="email-container">
           <span className="email-title">Email</span>
-          <p className="email">sotopro@gmail.com</p>
+          <p className="email">tricottiLeo@gmail.com"</p>
         </div>
         <div className="pass-container">
           <span className="pass-title">Contraseña</span>
