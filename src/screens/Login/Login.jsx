@@ -2,10 +2,12 @@ import { useState } from "react";
 import sendImg from "../../assets/images/sends/sends.jpg";
 import { useAuth } from "../../components/Context/AuthContext";
 import { useNavigate } from "react-router-dom";
+
 import "../../CSS/login.css";
 
 export function Login() {
-  const [user, getUser] = useState({
+  const { logout, user } = useAuth();
+  const [currentUser, setCurrentUser] = useState({
     email: "tricottileo@gmail.com",
     password: "tricottileo",
   });
@@ -18,16 +20,25 @@ export function Login() {
     e.preventDefault();
     setError("");
     try {
-      await login(user.email, user.password);
+      await login(currentUser.email, currentUser.password);
       navigate("/cart");
     } catch (error) {
       setError(error.message);
       console.log(error);
     }
-    
+  };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error(error.message);
+    }
   };
 
   return (
+    
+
     <div className="login-container">
       <div className="top-line"></div>
       <div className="facebookLogin">
