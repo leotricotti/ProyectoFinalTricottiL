@@ -1,4 +1,4 @@
-.login {
+.login-container {
   width: inherit;
   height: 60vh;
   display: flex;
@@ -93,5 +93,15 @@
 }
 
 @media(min-width: 768px) {
+  .login-container {
+    width: 25rem;
+    margin: auto;
+  }
+}
 
+@media(min-width: 992px) {
+  .login-container {
+    width: 30rem;
+    margin: auto;
+  }
 }

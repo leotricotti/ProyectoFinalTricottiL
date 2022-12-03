@@ -59,6 +59,7 @@ body {
   font-size: var(--fs-body);
   font-weight: 300;
   background-color: var(--clr-white);
+  min-height: 100vh;
 }
 
 @media (min-width: 1200px) {

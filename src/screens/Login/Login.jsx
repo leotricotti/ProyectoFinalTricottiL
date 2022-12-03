@@ -28,7 +28,7 @@ export function Login() {
   };
 
   return (
-    <div className="login">
+    <div className="login-container">
       <div className="top-line"></div>
       <div className="facebookLogin">
         <p>facebook login</p>

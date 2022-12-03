@@ -26,8 +26,8 @@ export const App = () => {
               element={<ItemDetailContainer />}
             />
             <Route exact path="/stores" element={<StoreAddressPage />} />
-            <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/login" element={<Login />} />
+            <Route exact path="/cart" element={<Cart />} />
           </Routes>
         </main>
         <Footer />
