@@ -17,7 +17,6 @@ export const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();
-  
 
   const userSettins = () => {
     setCurrentUser({
@@ -40,6 +39,8 @@ export const Login = () => {
       console.log(error);
     }
   };
+
+  console.log(currentUser);
 
   const saveCart = () => {
     const usersCart = {
