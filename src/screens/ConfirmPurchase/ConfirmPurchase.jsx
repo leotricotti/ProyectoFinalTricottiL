@@ -1,10 +1,41 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../components/Context/CartContext";
 import { CartItem } from "../../components/CartItem/CartItem";
+import { useAuth } from "../../components/Context/AuthContext";
+import { getFirestore, addDoc, collection } from "firebase/firestore";
 import "../../CSS/confirmPurchase.css";
 
 export const ConfirmPurchase = () => {
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
+  const { user } = useAuth();
+  const [ orderId, setOrderId] = useState(null);
+
+
+  console.log();
+  
+  const saveOrder = () => {
+    const userOrder = {
+      user: {
+        email: user.email,
+        password: user.accessToken
+      },
+      items: cartArray,
+      total: totalCart(),
+    };
+    const db = getFirestore();
+
+    const orderCollection = collection(db, "orders");
+    addDoc(orderCollection, userOrder).then((docRef) => {
+      setOrderId(docRef.id);
+    });
+  };
+
+  console.log(orderId);
+
+
+  console.log(totalCart());
+
+  console.log(cartArray);
 
   return (
     <>
@@ -36,7 +67,7 @@ export const ConfirmPurchase = () => {
           </div>
         </div>
         <div className="cart-option">
-          <div to={"/login"} className="close-buy">
+          <div to={"/login"} className="close-buy" onClick={saveOrder}>
             Confirmar compra
           </div>
         </div>

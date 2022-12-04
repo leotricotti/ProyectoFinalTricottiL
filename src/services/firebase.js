@@ -4,7 +4,7 @@ import {
   getDocs,
   collection,
   where,
-  addDoc,
+  addDoc
 } from "firebase/firestore";
 
 export const firebaseServices = {
@@ -29,11 +29,11 @@ export const firebaseServices = {
     return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   },
 
-  getPurchase: async () => {
+  createOrder: (order) => {
     const db = getFirestore();
-    const cartsCollection = collection(db, "carts");
-    const snapshot = await getDocs(cartsCollection.id);
-    return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    const ordersCollection = collection(db, "orders");
+    return addDoc(ordersCollection, order).then((docRef) => {
+      return docRef.id;
+    });
   },
-}
-
+};

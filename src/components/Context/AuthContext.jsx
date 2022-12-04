@@ -25,6 +25,8 @@ export const AuthProvider = ({ children }) => {
     return () => unsubuscribe();
   }, []);
 
+  console.log(user);
+
   return (
     <AuthContext.Provider value={{ login, user }}>
       {children}
