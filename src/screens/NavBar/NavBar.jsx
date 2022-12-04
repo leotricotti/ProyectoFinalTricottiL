@@ -36,11 +36,11 @@ export function NavBar() {
         <NavBarMenu />
       </div>
       <div className={styles.headerLeft}>
-        <NavLink to='login' className={styles.navLogin}>
+        <NavLink to="login" className={styles.navLogin}>
           <p>Iniciar sesión /</p>
         </NavLink>
         <div className={styles.userImg}>
-          <LoggedInWidget user={"Leonardo"}/>
+          <LoggedInWidget user={"Leonardo"} />
         </div>
         <NavLink to="/cart" className={styles.cart}>
           <p>Cart</p>

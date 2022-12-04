@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { navBarMenuItems } from "../../assets/data/navBarMenuItems";
+import { LoggedInWidget } from "../Widgets/LoggedInWidget";
 import styles from "../../CSS/navBar.module.css";
 
 export function NavBarMenu({ close }) {
@@ -19,14 +20,6 @@ export function NavBarMenu({ close }) {
             </li>
           );
         })}
-        <li key={7} className={styles.navListLast}>
-          <div
-            onClick={close}
-            className={styles.navLink}
-          >
-            <p>cerrar sesión</p>
-          </div>
-        </li>
       </ul>
     </nav>
   );
