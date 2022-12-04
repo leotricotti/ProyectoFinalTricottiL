@@ -41,10 +41,19 @@
 }
 
 .navList:first-child {
-  margin-top: 1rem;
+  margin-top: .5rem;
 }
 
-.navLink, .loginLink {
+.navList:last-child {
+  border-bottom: transparent;
+}
+
+.navListLast {
+  display: none;
+}
+
+.navLink,
+.loginLink {
   color: #000;
   font-size: 1rem;
   padding: 0rem 2rem;
@@ -69,6 +78,10 @@
 
 .navLogin {
   display: none;
+}
+
+.userImg {
+  display: none ;
 }
 
 @media (min-width: 992px) {
@@ -141,10 +154,17 @@
     margin-bottom: .2rem;
   }
 
-  .cart>p, .navLogin>p{
+  .cart>p,
+  .navLogin>p {
     display: block;
     color: #000;
     font-size: .85rem;
   }
 
+  .userImg {
+    display: block;
+    line-height: 1rem;
+    padding-right: .5rem;
+    cursor: pointer;
+  }
 }

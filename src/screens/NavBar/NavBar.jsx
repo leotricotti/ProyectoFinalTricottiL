@@ -4,6 +4,7 @@ import { CartWidget } from "../../components/Widgets/CartWidget";
 import { NavToggle } from "../../components/Widgets/NavToggle";
 import { NavBarMenu } from "../../components/NavBarMenu/NavBarMenu";
 import { NavLink } from "react-router-dom";
+import { LoggedInWidget } from "../../components/Widgets/LoggedInWidget";
 import styles from "../../CSS/navBar.module.css";
 
 export function NavBar() {
@@ -38,6 +39,9 @@ export function NavBar() {
         <NavLink to='login' className={styles.navLogin}>
           <p>Iniciar sesión /</p>
         </NavLink>
+        <div className={styles.userImg}>
+          <LoggedInWidget />
+        </div>
         <NavLink to="/cart" className={styles.cart}>
           <p>Cart</p>
           <CartWidget />
