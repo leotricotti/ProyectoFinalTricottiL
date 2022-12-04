@@ -37,9 +37,6 @@ export function NavBar() {
         <NavBarMenu />
       </div>
       <div className={styles.headerLeft}>
-        <NavLink to="login" className={styles.navLogin}>
-          <p>Iniciar sesión /</p>
-        </NavLink>
         <NavLink to="/cart" className={styles.cart}>
           <p>Cart</p>
           <CartWidget />
