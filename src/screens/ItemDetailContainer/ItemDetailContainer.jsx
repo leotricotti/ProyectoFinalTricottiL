@@ -16,8 +16,6 @@ export const ItemDetailContainer = () => {
   let initial = 1;
   let [count, setCount] = useState(initial);
 
-  console.log(state);
-
   //función para sumar y modificar setCount
   const plusItem = () => {
     setCount((count += 1));
