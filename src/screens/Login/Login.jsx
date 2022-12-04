@@ -18,6 +18,12 @@ export const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState();
 
+  const checkOut = () => {
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
+  }
+
   const userSettins = () => {
     setCurrentUser({
       ...currentUser,
@@ -28,12 +34,12 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     userSettins();
-    saveCart();
+    checkOut();
     e.preventDefault();
     setError("");
     try {
       await login(currentUser.email, currentUser.password);
-      navigate("/");
+      saveCart();
     } catch (error) {
       setError(error.message);
       console.log(error);
