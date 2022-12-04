@@ -35,7 +35,7 @@ export const ItemListContainer = () => {
 
     if (classItem === "flex") {
       setActive("active");
-      return (classItem.className.add(active));
+      return classItem.className.add(active);
     }
   };
 

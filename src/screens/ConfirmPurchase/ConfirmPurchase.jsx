@@ -14,7 +14,7 @@ export const ConfirmPurchase = () => {
   const { user } = useAuth();
   const [orderId, setOrderId] = useState(null);
   const { clearCart } = useContext(CartContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const saveOrder = () => {
     const userOrder = {
@@ -37,13 +37,12 @@ export const ConfirmPurchase = () => {
   };
 
   const emptyCart = () => {
-    setTimeout(() =>{
+    setTimeout(() => {
       clearCart();
     }, 2000);
-  }
+  };
 
   const finishPurchase = () => {
-
     MySwal.fire({
       position: "center",
       icon: "success",
@@ -51,7 +50,7 @@ export const ConfirmPurchase = () => {
       showConfirmButton: false,
       timer: 2000,
     });
-  }
+  };
 
   return (
     <>

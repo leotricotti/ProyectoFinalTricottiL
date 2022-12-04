@@ -93,7 +93,6 @@
   margin-left: .7rem;
 }
 
-
 @media (min-width: 750px) {
   .filterBtn {
     width: 30%;
@@ -102,9 +101,9 @@
 
 @media (min-width: 992px) {
   .navContainer {
-     margin-bottom: 0;
+    margin-bottom: 0;
   }
-  
+
   .filterBtn {
     width: 100%;
   }

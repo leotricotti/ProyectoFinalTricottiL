@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
       0
     );
   };
-  
+
   const value = {
     addToCart,
     deleteItem,

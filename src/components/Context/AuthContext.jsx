@@ -1,8 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import {
-  signInWithEmailAndPassword,
-  onAuthStateChanged
-} from "firebase/auth";
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../index";
 
 export const AuthContext = createContext();
@@ -24,8 +21,6 @@ export const AuthProvider = ({ children }) => {
     });
     return () => unsubuscribe();
   }, []);
-
-  console.log(user);
 
   return (
     <AuthContext.Provider value={{ login, user }}>

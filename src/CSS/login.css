@@ -55,16 +55,19 @@
   margin-top: 1rem;
 }
 
-.email-container, .pass-container {
+.email-container,
+.pass-container {
   width: 100%;
 }
 
-.email-title, .pass-title { 
+.email-title,
+.pass-title {
   font-size: .7rem;
   text-transform: uppercase;
 }
 
-.email, .pass {
+.email,
+.pass {
   width: 100%;
   padding: .8rem;
   border: 1px solid rgba(0, 0, 0, .125);

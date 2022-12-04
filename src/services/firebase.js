@@ -4,7 +4,7 @@ import {
   getDocs,
   collection,
   where,
-  addDoc
+  addDoc,
 } from "firebase/firestore";
 
 export const firebaseServices = {

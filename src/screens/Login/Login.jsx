@@ -18,24 +18,31 @@ export const Login = () => {
   const [error, setError] = useState();
 
   const handleSubmit = async (e) => {
-    navigate("/order");
+    confirmLogin();
     setError("");
     e.preventDefault();
     try {
       await login(currentUser.email, currentUser.password);
-      checkCart();
     } catch (error) {
       setError(error.message);
       console.log(error);
     }
   };
 
-  const checkCart = () => {
+  const confirmLogin = () => {
     MySwal.fire({
       position: "center",
       icon: "success",
-      title: "Revisa y confirma tu compra.",
-      timer: 2000,
+      title: "Bienvenido!!! Que deseas hacer?",
+      showConfirmButton: true,
+      confirmButtonText: "Ir al pago...",
+      confirmButtonColor: "#555",
+      showCancelButton: true,
+      cancelButtonText: "Seguir, comprando",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/order");
+      } else if (navigate("/products"));
     });
   };
 

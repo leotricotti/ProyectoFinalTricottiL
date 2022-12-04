@@ -2,7 +2,7 @@ import { MinusSign } from "../Widgets/MinusSign";
 import { PlusSign } from "../Widgets/PlusSign";
 import styles from "../../CSS/itemCount.module.css";
 
-export const ItemCount = ({ plusItem, minusItem,  count,  confirmAdd }) => {
+export const ItemCount = ({ plusItem, minusItem, count, confirmAdd }) => {
   return (
     <div className={styles.buyItem}>
       <div className={styles.quantity}>

@@ -1,14 +1,7 @@
 import { TrashCan } from "../Widgets/TrashCan";
 import styles from "../../CSS/cartItem.module.css";
 
-export const CartItem = ({
-  id,
-  img,
-  title,
-  count,
-  price,
-  deleteItem,
-}) => {
+export const CartItem = ({ id, img, title, count, price, deleteItem }) => {
   return (
     <div className={styles.cartContainer}>
       <div className={styles.cartBodyContainer}>

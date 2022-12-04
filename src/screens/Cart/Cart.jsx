@@ -3,13 +3,11 @@ import { useContext } from "react";
 import { CartContext } from "../../components/Context/CartContext";
 import { CartItem } from "../../components/CartItem/CartItem";
 import { NavLink } from "react-router-dom";
-import { firebaseServices } from "../../services/firebase";
 import styles from "../../CSS/cart.module.css";
 
 export const Cart = () => {
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
   const total = totalCart();
-
 
   return (
     <>

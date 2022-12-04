@@ -1,5 +1,5 @@
 import img from "../../assets/images/banner/todo.webp";
-import styles from '../../CSS/dropdownFilters.module.css'
+import styles from "../../CSS/dropdownFilters.module.css";
 
 export const FilterImg = () => {
   return (
