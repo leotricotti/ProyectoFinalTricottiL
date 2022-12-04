@@ -27,7 +27,7 @@
 
 .navContainer {
   width: 100%;
-  height: 18rem;
+  height: 15rem;
   background: #fff;
   position: absolute;
   top: 3rem;
@@ -46,10 +46,6 @@
 
 .navList:last-child {
   border-bottom: transparent;
-}
-
-.navListLast {
-  display: none;
 }
 
 .navLink,
@@ -118,10 +114,6 @@
 
   .navList:first-child {
     margin-top: 0;
-  }
-
-  .navList:last-child {
-    display: none;
   }
 
   .navLink {

@@ -64,7 +64,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     position: relative;
-    height: 75vh;
   }
 
   .img {
@@ -83,11 +82,10 @@
   .spinner {
     top: 15rem;
   }
-
 }
 
 @media(min-width: 992px) {
   .flexContainer {
-    height: 100vh;
+    height: 130vh;
   }
 }
