@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { navBarMenuItems } from "../../assets/data/navBarMenuItems";
-import { LoggedInWidget } from "../Widgets/LoggedInWidget";
 import styles from "../../CSS/navBar.module.css";
 
 export function NavBarMenu({ close }) {
