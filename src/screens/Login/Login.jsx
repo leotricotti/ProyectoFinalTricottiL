@@ -1,18 +1,15 @@
 import { useState, useContext } from "react";
 import { useAuth } from "../../components/Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../../components/Context/CartContext";
+
 import sendImg from "../../assets/images/sends/sends.jpg";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+
 import "../../CSS/login.css";
 
 export const Login = () => {
   const MySwal = withReactContent(Swal);
-  const { cartArray, totalCart } = useContext(CartContext);
-  const [cartId, setCartId] = useState(null);
-  const total = totalCart();
   const currentUser = {
     email: "tricottileo@gmail.com",
     password: "tricottileo",
@@ -28,30 +25,11 @@ export const Login = () => {
     try {
       await login(currentUser.email, currentUser.password);
       createOrder();
-      saveCart();
     } catch (error) {
       setError(error.message);
       console.log(error);
     }
   };
-
-  const saveCart = () => {
-    const usersCart = {
-      user: {
-        ...currentUser,
-      },
-      items: cartArray,
-      total: { total },
-    };
-    const db = getFirestore();
-
-    const cartCollection = collection(db, "carts");
-    addDoc(cartCollection, usersCart).then((docRef) => {
-      setCartId(docRef.id);
-    });
-  };
-
-  console.log(cartId);
 
   const createOrder = () => {
     MySwal.fire({
