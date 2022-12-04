@@ -16,14 +16,6 @@ export function NavBar() {
     }
   };
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
-
   return (
     <header className={styles.headerContainer}>
       <div className={styles.navToggle}>

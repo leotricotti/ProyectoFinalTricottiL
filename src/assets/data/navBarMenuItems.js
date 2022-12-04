@@ -24,9 +24,4 @@ export const navBarMenuItems = [
     title: "encontranos",
     category: "/stores",
   },
-  {
-    id: "6",
-    title: "iniciar sesión",
-    category: "/login",
-  },
 ];
