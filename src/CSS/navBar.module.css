@@ -80,10 +80,6 @@
   display: none;
 }
 
-.userImg {
-  display: none ;
-}
-
 @media (min-width: 992px) {
   .headerContainer {
     height: 4rem;
@@ -159,10 +155,5 @@
     display: block;
     color: #000;
     font-size: .85rem;
-  }
-
-  .userImg {
-    display: block;
-    cursor: pointer;
   }
 }

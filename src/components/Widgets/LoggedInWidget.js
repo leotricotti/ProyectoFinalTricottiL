@@ -12,7 +12,6 @@ export const LoggedInWidget = ({ user }) => {
           <span>Cerrar sesión</span>
         </button>
       </div>
-      <div className="loggedIn-overlay"></div>
     </div>
   );
 };
