@@ -8,16 +8,14 @@ import "../../CSS/confirmPurchase.css";
 export const ConfirmPurchase = () => {
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
   const { user } = useAuth();
-  const [ orderId, setOrderId] = useState(null);
+  const [orderId, setOrderId] = useState(null);
+  const { clearCart } = useContext(CartContext);
 
-
-  console.log();
-  
   const saveOrder = () => {
     const userOrder = {
       user: {
         email: user.email,
-        password: user.accessToken
+        password: user.accessToken,
       },
       items: cartArray,
       total: totalCart(),
@@ -28,14 +26,14 @@ export const ConfirmPurchase = () => {
     addDoc(orderCollection, userOrder).then((docRef) => {
       setOrderId(docRef.id);
     });
+    emptyCart();
   };
 
-  console.log(orderId);
-
-
-  console.log(totalCart());
-
-  console.log(cartArray);
+  const emptyCart = () => {
+    setTimeout(() =>{
+      clearCart();
+    }, 2000);
+  }
 
   return (
     <>

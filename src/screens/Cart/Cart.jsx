@@ -8,8 +8,8 @@ import styles from "../../CSS/cart.module.css";
 
 export const Cart = () => {
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
-  const { createOrder } = firebaseServices;
   const total = totalCart();
+
 
   return (
     <>
