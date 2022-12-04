@@ -64,14 +64,9 @@ export const Cart = () => {
             </div>
           </div>
           <div className={styles.cartOption}>
-            <NavLink to={"/login"} className={styles.closeBuy}>
-              Finalizar compra
-            </NavLink>
-          </div>
-          <div className={styles.continue}>
-            <NavLink to="/products">
-              <span className={styles.continue}>Seguir comprando</span>
-            </NavLink>
+            <div to={"/login"} className={styles.closeBuy}>
+              Confirmar compra
+            </div>
           </div>
         </div>
       </div>

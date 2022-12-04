@@ -1,7 +1,6 @@
 import { useState, useContext } from "react";
 import { useAuth } from "../../components/Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
 import sendImg from "../../assets/images/sends/sends.jpg";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -24,14 +23,14 @@ export const Login = () => {
     e.preventDefault();
     try {
       await login(currentUser.email, currentUser.password);
-      createOrder();
+      checkCart();
     } catch (error) {
       setError(error.message);
       console.log(error);
     }
   };
 
-  const createOrder = () => {
+  const checkCart = () => {
     MySwal.fire({
       position: "center",
       icon: "success",
