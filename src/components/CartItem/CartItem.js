@@ -10,7 +10,7 @@ export const CartItem = ({
   deleteItem,
 }) => {
   return (
-    <>
+    <div className={styles.cartContainer}>
       <div className={styles.cartBodyContainer}>
         <img className={styles.cartImg} src={img} alt={title} />
         <div className={styles.infoContainer}>
@@ -25,6 +25,6 @@ export const CartItem = ({
           <TrashCan />
         </div>
       </div>
-    </>
+    </div>
   );
 };

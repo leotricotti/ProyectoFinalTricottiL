@@ -1,11 +1,13 @@
 .purchase-container {
   width: 100%;
-  min-height: 70vh;
+  max-width: 30rem;
+  height: 70vh;
   max-height: 150vh;
   z-index: 1;
   padding: 0 .7rem;
   position: relative;
   top: 5rem;
+  margin: auto;
 }
 
 .title-purchase {
