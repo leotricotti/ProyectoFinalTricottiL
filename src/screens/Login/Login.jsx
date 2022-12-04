@@ -10,10 +10,10 @@ export const Login = () => {
   const { cartArray, totalCart } = useContext(CartContext);
   const [cartId, setCartId] = useState(null);
   const total = totalCart();
-  const [currentUser, setCurrentUser] = useState({
-    email: "",
-    password: "",
-  });
+  const currentUser = {
+    email: "tricottileo@gmail.com",
+    password: "tricottileo",
+  };
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();
@@ -24,19 +24,10 @@ export const Login = () => {
     }, 2000);
   }
 
-  const userSettins = () => {
-    setCurrentUser({
-      ...currentUser,
-      email: "tricottileo@gmail.com",
-      password: "tricottileo",
-    });
-  };
-
   const handleSubmit = async (e) => {
-    userSettins();
     checkOut();
-    e.preventDefault();
     setError("");
+    e.preventDefault();
     try {
       await login(currentUser.email, currentUser.password);
       saveCart();
@@ -45,8 +36,6 @@ export const Login = () => {
       console.log(error);
     }
   };
-
-  console.log(currentUser);
 
   const saveCart = () => {
     const usersCart = {
