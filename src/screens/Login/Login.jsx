@@ -41,15 +41,12 @@ export const Login = () => {
     };
     const db = getFirestore();
 
-    console.log(usersCart);
-
     const cartCollection = collection(db, "carts");
     addDoc(cartCollection, usersCart).then((docRef) => {
       setCartId(docRef.id);
+      console.log(docRef);
     });
   };
-
-
 
   return (
     <>
