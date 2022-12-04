@@ -13,6 +13,8 @@ export function Login() {
     emailVerified:""
   });
 
+  console.log(user);
+
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();

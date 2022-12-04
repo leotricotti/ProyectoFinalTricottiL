@@ -1,15 +1,17 @@
 import userImg from "../../assets/images/user/user.jpg";
-import { useAuth } from "../Context/AuthContext";
-import '../../CSS/loggedInWidget.css'
+import "../../CSS/loggedInWidget.css";
 
-export const LoggedInWidget = () => {
-  const { displayName } = useAuth();
-
-  console.log(displayName);
-
+export const LoggedInWidget = ({ user }) => {
   return (
-    <div className="widget-container">
-      <img src={userImg} alt="Informacion de usuario" className="userImg" />
+    <div className="user-container">
+      <img src={userImg} alt="Informacion de usuario" className="user-img" />
+      <div className="sesion-info">
+        <span>Bienvenido</span>
+        <p>{user}</p>
+        <button className="btn-logout">
+          <span>Cerrar sesión</span>
+        </button>
+      </div>
     </div>
   );
 };

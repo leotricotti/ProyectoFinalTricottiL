@@ -40,7 +40,7 @@ export function NavBar() {
           <p>Iniciar sesión /</p>
         </NavLink>
         <div className={styles.userImg}>
-          <LoggedInWidget />
+          <LoggedInWidget user={"Leonardo"}/>
         </div>
         <NavLink to="/cart" className={styles.cart}>
           <p>Cart</p>
