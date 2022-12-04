@@ -6,12 +6,10 @@ import { NavLink } from "react-router-dom";
 import { firebaseServices } from "../../services/firebase";
 import styles from "../../CSS/cart.module.css";
 
-
 export const Cart = () => {
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
   const { createOrder } = firebaseServices;
   const total = totalCart();
-
 
   return (
     <>
@@ -60,9 +58,7 @@ export const Cart = () => {
                 </div>
               </div>
               <div className={styles.cartOption}>
-                <NavLink to={'/login'}
-                  className={styles.closeBuy}
-                >
+                <NavLink to={"/login"} className={styles.closeBuy}>
                   Finalizar compra
                 </NavLink>
               </div>

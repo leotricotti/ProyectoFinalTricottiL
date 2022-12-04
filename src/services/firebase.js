@@ -29,10 +29,11 @@ export const firebaseServices = {
     return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   },
 
-  createOrder: async (order) => {
+  getPurchase: async () => {
     const db = getFirestore();
-    const ordersCollection = collection(db, "orders");
-    const docRef = await addDoc(ordersCollection, order);
-    return docRef.id;
+    const cartsCollection = collection(db, "carts");
+    const snapshot = await getDocs(cartsCollection.id);
+    return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   },
-};
+}
+

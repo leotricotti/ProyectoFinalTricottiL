@@ -3,12 +3,15 @@ import { useAuth } from "../../components/Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../components/Context/CartContext";
 import sendImg from "../../assets/images/sends/sends.jpg";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import "../../CSS/login.css";
 
 export const Login = () => {
+  const MySwal = withReactContent(Swal);
   const { cartArray, totalCart } = useContext(CartContext);
-  const [cartId, setCartId] = useState([]);
+  const [cartId, setCartId] = useState(null);
   const total = totalCart();
   const currentUser = {
     email: "tricottileo@gmail.com",
@@ -24,6 +27,7 @@ export const Login = () => {
     e.preventDefault();
     try {
       await login(currentUser.email, currentUser.password);
+      createOrder();
       saveCart();
     } catch (error) {
       setError(error.message);
@@ -44,7 +48,17 @@ export const Login = () => {
     const cartCollection = collection(db, "carts");
     addDoc(cartCollection, usersCart).then((docRef) => {
       setCartId(docRef.id);
-      console.log(docRef);
+    });
+  };
+
+  console.log(cartId);
+
+  const createOrder = () => {
+    MySwal.fire({
+      position: "center",
+      icon: "success",
+      title: "Revisa y confirma tu compra.",
+      timer: 2000,
     });
   };
 
