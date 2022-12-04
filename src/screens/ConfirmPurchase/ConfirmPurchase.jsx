@@ -2,7 +2,7 @@ import logo from "../../assets/images/logo/converse.webp";
 import { useContext } from "react";
 import { CartContext } from "../../components/Context/CartContext";
 import { CartItem } from "../../components/CartItem/CartItem";
-import { NavLink } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { firebaseServices } from "../../services/firebase";
 import { CartContext } from "../../components/Context/CartContext";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
@@ -11,7 +11,7 @@ import styles from "../../CSS/cart.module.css";
 export const Cart = () => {
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
   const total = totalCart();
-  const [cartId, setCartId] = useState(null);
+  const [cartId, setOrderId] = useState(null);
 
   const saveCart = () => {
     const usersCart = {
@@ -27,6 +27,27 @@ export const Cart = () => {
     addDoc(cartCollection, usersCart).then((docRef) => {
       setCartId(docRef.id);
     });
+  };
+
+  const onHandlerOrder = async () => {
+    const myOrder = {
+      user: {
+        name: "John Doe",
+        email: "awdawd@gmail.com",
+      },
+      items: cart,
+      total: cartTotal,
+    };
+    const orderId = await createOrder(myOrder);
+    setOrderId(orderId);
+    setCart([]);
+    setIsFiltering(false);
+    onHandlerCart();
+  };
+
+  const handleCheckout = () => {
+    saveCart();
+    onHandlerOrder();
   };
 
   return (
@@ -64,7 +85,7 @@ export const Cart = () => {
             </div>
           </div>
           <div className={styles.cartOption}>
-            <div to={"/login"} className={styles.closeBuy}>
+            <div to={"/login"} className={styles.closeBuy} onClick={handleCheckout}>
               Confirmar compra
             </div>
           </div>
