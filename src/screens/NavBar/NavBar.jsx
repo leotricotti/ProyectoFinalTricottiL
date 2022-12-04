@@ -17,6 +17,14 @@ export function NavBar() {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
   return (
     <header className={styles.headerContainer}>
       <div className={styles.navToggle}>
@@ -42,7 +50,7 @@ export function NavBar() {
           <p>Iniciar sesión /</p>
         </NavLink>
         <div className={styles.userImg}>
-          <LoggedInWidget logout={logout} />
+          <LoggedInWidget logout={handleLogout} />
         </div>
         <NavLink to="/cart" className={styles.cart}>
           <p>Cart</p>

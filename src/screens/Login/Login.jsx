@@ -23,11 +23,8 @@ export function Login() {
     setCurrentUser({
       ...currentUser,
       email: "tricottileo@gmail.com",
-      password: "tricottileo",
-      displayName: "Leonardo",
-      emailVerified: true,
+      password: "tricottileo"
     });
-    console.log(currentUser);
   };
 
   const handleSubmit = async (e) => {
@@ -36,18 +33,10 @@ export function Login() {
     setError("");
     try {
       await login(currentUser.email, currentUser.password);
-      navigate("/cart");
+      navigate("/");
     } catch (error) {
       setError(error.message);
       console.log(error);
-    }
-  };
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.error(error.message);
     }
   };
 
