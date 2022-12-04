@@ -44,7 +44,7 @@ export const Login = () => {
   const saveCart = () => {
     const usersCart = {
       user: {
-        ...login,
+        ...currentUser,
       },
       items: cartArray,
       total: { total },
