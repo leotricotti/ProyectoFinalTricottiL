@@ -18,14 +18,8 @@ export const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState();
 
-  const checkOut = () => {
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
-  }
-
   const handleSubmit = async (e) => {
-    checkOut();
+    navigate("/order");
     setError("");
     e.preventDefault();
     try {

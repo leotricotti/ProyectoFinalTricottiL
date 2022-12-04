@@ -1,5 +1,5 @@
 
 
 export const CreateOrder = () => {
-  return conole.log(1);
+  return console.log(1);
 };
