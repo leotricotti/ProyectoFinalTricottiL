@@ -5,30 +5,13 @@ import { CartItem } from "../../components/CartItem/CartItem";
 import { NavLink } from "react-router-dom";
 import { firebaseServices } from "../../services/firebase";
 import styles from "../../CSS/cart.module.css";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+
 
 export const Cart = () => {
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
-  const [cartId, setCartId] = useState(null);
   const { createOrder } = firebaseServices;
   const total = totalCart();
 
-  const saveCart = () => {
-    const usersCart = {
-      user: {
-        name: "aniel Soto",
-        email: "sotopro@gmail.com",
-      },
-      items: cartArray,
-      total: { total },
-    };
-    const db = getFirestore();
-
-    const cartCollection = collection(db, "carts");
-    addDoc(cartCollection, usersCart).then((docRef) => {
-      setCartId(docRef.id);
-    });
-  };
 
   return (
     <>
@@ -79,7 +62,6 @@ export const Cart = () => {
               <div className={styles.cartOption}>
                 <NavLink to={'/login'}
                   className={styles.closeBuy}
-                  // onClick={() => handleCheckout}
                 >
                   Finalizar compra
                 </NavLink>

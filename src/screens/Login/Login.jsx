@@ -1,34 +1,35 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useAuth } from "../../components/Context/AuthContext";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../components/Context/CartContext";
 import sendImg from "../../assets/images/sends/sends.jpg";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import "../../CSS/login.css";
 
-export function Login() {
-  const { user } = useAuth();
+export const Login = () => {
+  const { cartArray, totalCart } = useContext(CartContext);
+  const [cartId, setCartId] = useState(null);
+  const total = totalCart();
   const [currentUser, setCurrentUser] = useState({
     email: "",
     password: "",
-    displayName: "",
-    emailVerified: "",
   });
-
-  console.log(user);
-
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();
+  
 
   const userSettins = () => {
     setCurrentUser({
       ...currentUser,
       email: "tricottileo@gmail.com",
-      password: "tricottileo"
+      password: "tricottileo",
     });
   };
 
   const handleSubmit = async (e) => {
     userSettins();
+    saveCart();
     e.preventDefault();
     setError("");
     try {
@@ -38,6 +39,22 @@ export function Login() {
       setError(error.message);
       console.log(error);
     }
+  };
+
+  const saveCart = () => {
+    const usersCart = {
+      user: {
+        ...login,
+      },
+      items: cartArray,
+      total: { total },
+    };
+    const db = getFirestore();
+
+    const cartCollection = collection(db, "carts");
+    addDoc(cartCollection, usersCart).then((docRef) => {
+      setCartId(docRef.id);
+    });
   };
 
   return (
@@ -69,4 +86,4 @@ export function Login() {
       </div>
     </>
   );
-}
+};
