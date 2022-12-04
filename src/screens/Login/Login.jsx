@@ -18,7 +18,7 @@ export const Login = () => {
   const [error, setError] = useState();
 
   const handleSubmit = async (e) => {
-    navigate("/");
+    navigate("/order");
     setError("");
     e.preventDefault();
     try {

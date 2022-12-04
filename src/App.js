@@ -10,6 +10,7 @@ import { NavFooter } from "./components/NavFooter/NavFooter";
 import { CartProvider } from "./components/Context/CartContext.jsx";
 import { Login } from "./screens/Login/Login";
 import { AuthProvider } from "./components/Context/AuthContext";
+import { ConfirmPurchase } from "./screens/ConfirmPurchase/ConfirmPurchase";
 
 export const App = () => {
   return (
@@ -34,6 +35,7 @@ export const App = () => {
               <Route exact path="/stores" element={<StoreAddressPage />} />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/cart" element={<Cart />} />
+              <Route exact path="/order" element={<ConfirmPurchase />} />
             </Routes>
           </main>
           <Footer />

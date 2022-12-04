@@ -1,6 +1,4 @@
 import { TrashCan } from "../Widgets/TrashCan";
-import { PlusSign } from "../Widgets/PlusSign";
-import { MinusSign } from "../Widgets/MinusSign";
 import styles from "../../CSS/cartItem.module.css";
 
 export const CartItem = ({
@@ -9,9 +7,8 @@ export const CartItem = ({
   title,
   count,
   price,
-  deleteItem
+  deleteItem,
 }) => {
-  
   return (
     <>
       <div className={styles.cartBodyContainer}>
@@ -20,13 +17,7 @@ export const CartItem = ({
           <p className={styles.itemTitle}>{title}</p>
           <span className={styles.itemPrice}>${price},99</span>
           <div className={styles.btnContainer}>
-            <button className={styles.btnPlus}>
-              <PlusSign />
-            </button>
-            <span className={styles.quantity}>{count}</span>
-            <button className={styles.btnMinus}>
-              <MinusSign />
-            </button>
+            <span className={styles.quantity}>Cantidad: {count}</span>
           </div>
         </div>
         <span className={styles.subtotal}>${price * count},99</span>
