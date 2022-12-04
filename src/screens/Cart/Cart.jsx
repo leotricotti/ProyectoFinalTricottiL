@@ -77,12 +77,12 @@ export const Cart = () => {
                 </div>
               </div>
               <div className={styles.cartOption}>
-                <button
+                <NavLink to={'/login'}
                   className={styles.closeBuy}
                   // onClick={() => handleCheckout}
                 >
                   Finalizar compra
-                </button>
+                </NavLink>
               </div>
               <div className={styles.continue}>
                 <NavLink to="/products">
