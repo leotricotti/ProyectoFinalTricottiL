@@ -5,9 +5,11 @@ import { NavToggle } from "../../components/Widgets/NavToggle";
 import { NavBarMenu } from "../../components/NavBarMenu/NavBarMenu";
 import { NavLink } from "react-router-dom";
 import { LoggedInWidget } from "../../components/Widgets/LoggedInWidget";
+import { useAuth } from "../../components/Context/AuthContext";
 import styles from "../../CSS/navBar.module.css";
 
 export function NavBar() {
+  const { logout } = useAuth();
   const [toggle, setToggle] = useState(false);
   const close = () => {
     if (toggle) {
@@ -40,7 +42,7 @@ export function NavBar() {
           <p>Iniciar sesión /</p>
         </NavLink>
         <div className={styles.userImg}>
-          <LoggedInWidget user={"Leonardo"} />
+          <LoggedInWidget logout={logout} />
         </div>
         <NavLink to="/cart" className={styles.cart}>
           <p>Cart</p>

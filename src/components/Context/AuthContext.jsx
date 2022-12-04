@@ -2,8 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
-  signInWithPopup,
+  signOut
 } from "firebase/auth";
 import { auth } from "../../index";
 
