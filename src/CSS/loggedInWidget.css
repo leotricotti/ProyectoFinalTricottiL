@@ -31,33 +31,28 @@
   right: 3rem;
   top: .7rem;
   padding-bottom: .2rem;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-
-.sesion-info>span {
-  margin-top: .8rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .btn-logout {
   border: 1px solid rgba(0, 0, 0, .3);
-  background: transparent;
   padding: .5rem;
   margin-top: 1rem;
   cursor: pointer;
 }
 
-.btn-logout>span {
+.close-seccion {
   color: #000;
   text-transform: capitalize;
   font-weight: 600;
+  font-size: .85rem;
 }
 
 @media(min-width: 992px) {
   .user-container {
-    top: 1.2rem;
-    right: -3rem;
+    right: -5rem;
   }
-  
+
   .user-img {
     width: 3rem;
     height: 3rem;
