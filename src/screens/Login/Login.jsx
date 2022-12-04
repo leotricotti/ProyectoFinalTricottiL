@@ -8,7 +8,7 @@ import "../../CSS/login.css";
 
 export const Login = () => {
   const { cartArray, totalCart } = useContext(CartContext);
-  const [cartId, setCartId] = useState(null);
+  const [cartId, setCartId] = useState([]);
   const total = totalCart();
   const currentUser = {
     email: "tricottileo@gmail.com",
@@ -19,7 +19,7 @@ export const Login = () => {
   const [error, setError] = useState();
 
   const handleSubmit = async (e) => {
-    navigate("/order");
+    navigate("/");
     setError("");
     e.preventDefault();
     try {
@@ -41,11 +41,15 @@ export const Login = () => {
     };
     const db = getFirestore();
 
+    console.log(usersCart);
+
     const cartCollection = collection(db, "carts");
     addDoc(cartCollection, usersCart).then((docRef) => {
       setCartId(docRef.id);
     });
   };
+
+
 
   return (
     <>
