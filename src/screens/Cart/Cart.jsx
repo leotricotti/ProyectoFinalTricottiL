@@ -1,5 +1,5 @@
 import logo from "../../assets/images/logo/converse.webp";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../components/Context/CartContext";
 import { CartItem } from "../../components/CartItem/CartItem";
 import { NavLink } from "react-router-dom";
