@@ -5,7 +5,7 @@ import sendImg from "../../assets/images/sends/sends.jpg";
 import "../../CSS/login.css";
 
 export function Login() {
-  const { logout, user } = useAuth();
+  const { user } = useAuth();
   const [currentUser, setCurrentUser] = useState({
     email: "",
     password: "",
