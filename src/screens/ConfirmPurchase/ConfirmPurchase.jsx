@@ -1,54 +1,13 @@
 import logo from "../../assets/images/logo/converse.webp";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../components/Context/CartContext";
 import { CartItem } from "../../components/CartItem/CartItem";
-import { Navigate } from "react-router-dom";
-import { firebaseServices } from "../../services/firebase";
 import { CartContext } from "../../components/Context/CartContext";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
 import styles from "../../CSS/cart.module.css";
 
 export const Cart = () => {
   const { cartArray, deleteItem, totalCart } = useContext(CartContext);
-  const total = totalCart();
-  const [cartId, setOrderId] = useState(null);
 
-  const saveCart = () => {
-    const usersCart = {
-      user: {
-        ...currentUser,
-      },
-      items: cartArray,
-      total: { total },
-    };
-    const db = getFirestore();
-
-    const cartCollection = collection(db, "carts");
-    addDoc(cartCollection, usersCart).then((docRef) => {
-      setCartId(docRef.id);
-    });
-  };
-
-  const onHandlerOrder = async () => {
-    const myOrder = {
-      user: {
-        name: "John Doe",
-        email: "awdawd@gmail.com",
-      },
-      items: cart,
-      total: cartTotal,
-    };
-    const orderId = await createOrder(myOrder);
-    setOrderId(orderId);
-    setCart([]);
-    setIsFiltering(false);
-    onHandlerCart();
-  };
-
-  const handleCheckout = () => {
-    saveCart();
-    onHandlerOrder();
-  };
 
   return (
     <>
